@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heartfelt Homes Blog</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ffffff6a;
+      font-family: arial, sans-serif;
+     
+    }
+    .header {
+      background-image: url('image10.webp');
+      background-size: cover;
+      height:50vw;
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+    }
+    .header h1 {
+      font-family: sans-serif;
+      font-size: 4rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px black;
+      padding: 10px 20px;
+      border-radius: 10px;
+      animation: scaleIn 1s ease-out forwards;
+      font-family: 'Luckiest Guy', cursive;
+      font-family: luckiest guy;
+  
+    }
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .navbar {
+            background-color: #0000007d;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: Luckiest Guy;
+          }
+    .blog-content {
+      padding: 20px;
+    }
+    .dash button {
+      padding: 5px 10px;
+      background-color: #db993d;
+      color: white;
+      border: 2px solid #00000099;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .dash button:hover {
+      background-color: #4395ff;
+      border-color: #55b3ff99;
+    }
+    .footer {
+      background-color: #b3afaf;
+      color: rgb(255, 255, 255);
+      padding: 20px 0;
+    }
+    .footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .post-image {
+      max-width: 95%;
+      max-height: 200px;
+      object-fit: cover;
+      margin-top: 10px;
+    }
+    .deleteButton {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">H E A R T F E L T H O M E S</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="landingpage.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="BLOG.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="allbreeds.html">Adoption</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ABOUTUS.html">About us</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="header">
+  <h1>Heartfelt Homes Blog</h1>
+</div>
+
+<div class="container blog-content">
+  <h3>Share your experience here:</h3>
+  <div class="mb-3">
+    <textarea id="experienceInput" class="form-control" rows="4" placeholder="Write here..."></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="imageUpload" class="form-label">Upload Image</label>
+    <input type="file" id="imageUpload" class="form-control" accept="image/*">
+  </div>
+
+  <button id="postButton" class="btn btn-primary">Post</button>
+  <div class="dash mt-3">
+    <button onclick="window.location.href='USER_DASHBOARD.html'">Dashboard</button>
+  </div>
+  <hr>
+  <div id="postsContainer" class="mt-4"></div>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/8617/dog-park-petting-dog.jpg" class="img-fluid rounded" alt="Dog Park">
+      <p>Whiskers is a playful cat known for his hilarious antics...</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/8617/dog-park-petting-dog.jpg" class="img-fluid rounded" alt="Cute Pets">
+      <p>Something is going on here, HAHAHAHA!</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/8617/dog-park-petting-dog.jpg" class="img-fluid rounded" alt="Adorable Pets">
+      <p>Adorable moments captured with furry friends!</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Explore</h5>
+        <p><a href="#">Design</a></p>
+        <p><a href="#">Prototyping</a></p>
+      </div>
+      <div class="col-md-4">
+        <h5>Resources</h5>
+        <p><a href="#">Blog</a></p>
+        <p><a href="#">Colors</a></p>
+      </div>
+      <div class="col-md-4">
+        <h5>Use Cases</h5>
+        <p><a href="#">UI Design</a></p>
+        <p><a href="#">Wireframing</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const postButton = document.getElementById('postButton');
+const experienceInput = document.getElementById('experienceInput');
+const postsContainer = document.getElementById('postsContainer');
+const imageUpload = document.getElementById('imageUpload');
+
+// Load posts from localStorage on page load
+window.onload = () => {
+  const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+  savedPosts.forEach(post => {
+    createPost(post);
+  });
+};
+
+postButton.addEventListener('click', () => {
+  const userText = experienceInput.value.trim();
+  const imageFile = imageUpload.files[0];
+
+  if (userText || imageFile) {
+    const post = {
+      text: userText,
+      imageUrl: imageFile ? URL.createObjectURL(imageFile) : null,
+      id: Date.now()
+    };
+    createPost(post);
+    savePostToLocalStorage(post); // Save to localStorage
+    experienceInput.value = '';
+    imageUpload.value = ''; // Clear the file input
+  }
+});
+
+function createPost(post) {
+  const postDiv = document.createElement('div');
+  postDiv.className = 'border p-3 mb-3';
+  postDiv.setAttribute('data-id', post.id);
+  postDiv.innerHTML = `
+    <p>${post.text}</p>
+    ${post.imageUrl ? <img src="${post.imageUrl}" class="post-image" /> : ''}
+    <button class="btn btn-danger btn-sm deleteButton">Delete</button>
+  `;
+
+  // Add delete functionality
+  postDiv.querySelector('.deleteButton').addEventListener('click', () => {
+    deletePost(post.id);
+    postDiv.remove();
+  });
+
+  postsContainer.appendChild(postDiv);
+}
+
+function savePostToLocalStorage(post) {
+  const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+  savedPosts.push(post);
+  localStorage.setItem('posts', JSON.stringify(savedPosts));
+}
+
+function deletePost(postId) {
+  const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+  const updatedPosts = savedPosts.filter(post => post.id !== postId);
+  localStorage.setItem('posts', JSON.stringify(updatedPosts));
+}

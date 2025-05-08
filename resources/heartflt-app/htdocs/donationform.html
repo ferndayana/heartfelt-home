@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('12345.png.jpeg')no-repeat center center/cover;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .container .info {
+            flex: 3;
+            color:black;
+        }
+
+        .container .info p {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            color: black;
+        }
+
+        .container .qr-code {
+            flex: 1;
+            text-align: center;
+            color:black;
+        }
+
+        .container .qr-code img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+
+        .container button {
+            background-color: #f4a261;
+            border: none;
+            padding: 10px 20px;
+            color:black;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .container button:hover {
+            background-color: #e76f51;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info">
+          <p>If you want to donate food or vitamins, just message us through our Facebook page 
+            (<strong>Heartfelt Homes</strong>) or visit us at our Pet Shop located at <strong>Prk 7, Bunawan, Davao City</strong>.</p>
+            <p>If you want to donate money, simply scan the GCash code. Thank you!</p>
+        </div>
+        <div class="qr-code">
+            <img src="QR.jpg" alt="QR Code">
+            <h4><p>Transfer fees may apply.</p></h4>
+            <button><strong>Done</strong></button>
+        </div>
+    </div>
+</body>
+</html>

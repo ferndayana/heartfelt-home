@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>body {
+    font-family: lalezer;
+    background: url('image1.png.jpg')no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+}
+
+.form-container {
+    background-color: hsla(0, 0%, 100%, 0.477);
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    padding: 0px 0px;
+    
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 5px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select{
+    width: 102%;
+    padding: 5px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: auto;
+ 
+
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 102%;
+    padding: 5px;
+    margin: 3px 0;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#successMessage {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+</style>
+<body>
+    <div class="form-container">
+        <h1>Pet Adoption Form</h1>
+        <form id="adoptionForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter your location" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Contact</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="pet">Type of Pet</label>
+                <input type="text" id="pet" name="pet" placeholder="e.g., Dog, Cat" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Why Do You Want to Adopt?</label>
+                <textarea id="reason" name="reason" rows="4" placeholder="Explain your reasons" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <p id="successMessage" class="hidden">Thank you for your interest! We will contact you soon.</p>
+    </div>
+    <script>
+        // Submit form handler
+        document.getElementById("adoptionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form data
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const location = document.getElementById("location").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const pet = document.getElementById("pet").value.trim();
+            const reason = document.getElementById("reason").value.trim();
+
+            // Validate fields
+            if (!name || !email || !location || !phone || !pet || !reason) {
+                alert("Please fill out all fields before submitting.");
+                return;
+            }
+
+            // Create object to store form data
+            const adoptionData = {
+                name,
+                email,
+                location,
+                phone,
+                pet,
+                reason
+            };
+
+            // Save data to localStorage (simulate saving to the dashboard)
+            const pendingOrders = JSON.parse(localStorage.getItem("pendingOrders")) || [];
+            pendingOrders.push(adoptionData);
+            localStorage.setItem("pendingOrders", JSON.stringify(pendingOrders));
+
+            // Display success message
+            document.getElementById("successMessage").classList.remove("hidden");
+
+            // Reset form
+            document.getElementById("adoptionForm").reset();
+        });
+    </script>
+</body>
+</html>
